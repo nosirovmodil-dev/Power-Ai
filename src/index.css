@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-google: "Google Sans", sans-serif;
+}
+
+:root {
+  --bg-main: #ffffff;
+  --bg-sidebar: #f0f4f9;
+  --border-color: #e3e3e3;
+  --text-primary: #1f1f1f;
+  --text-secondary: #444746;
+  --accent-blue: #1a73e8;
+  --gemini-gradient: linear-gradient(74deg, #4285f4 0, #9b72cb 9%, #d96570 20%, #d96570 24%, #9b72cb 35%, #4285f4 44%, #9b72cb 50%, #d96570 56%, #131314 75%, #131314 100%);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.gemini-sparkle {
+  background: linear-gradient(to bottom right, #4285f4, #9b72cb, #d96570);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-full text-sm font-medium transition-colors;
+}
+
+.sidebar-item:hover {
+  @apply bg-[#e1e5ea];
+}
+
+.sidebar-item-active {
+  @apply bg-[#d3e3fd] text-[#041e49];
+}
+
+.input-pill {
+  @apply bg-[#f0f4f9] rounded-[28px] px-4 py-2 flex items-center gap-2 focus-within:bg-white focus-within:shadow-md transition-all border border-transparent focus-within:border-[#e3e3e3];
+}
+
+.message-user {
+  @apply bg-[#f0f4f9] rounded-[24px] px-5 py-3 max-w-[80%] self-end;
+}
+
+.message-assistant {
+  @apply flex gap-4 max-w-[90%] self-start;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f4f9 25%, #e1e5ea 50%, #f0f4f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}

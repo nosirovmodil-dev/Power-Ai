@@ -1,0 +1,5 @@
+{
+  "name": "Power AI",
+  "description": "A high-performance AI interface powered by Gemini, branded as Power AI.",
+  "requestFramePermissions": ["microphone"]
+}
